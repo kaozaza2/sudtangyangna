@@ -1,0 +1,19 @@
+{
+    "name": "fook/project",
+    "description": "Fook project",
+    "type": "project",
+    "require": {
+		"php": "^7.4",
+        "ext-gd": "*",
+        "ext-mysqli": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fook",
+            "email": "fookpairoom@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+	"prefer-stable" : true
+}
