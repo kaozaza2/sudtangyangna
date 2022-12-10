@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 

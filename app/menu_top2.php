@@ -7,7 +7,7 @@
 					<li class="Page5" id="limenuHead"><a href="admin_member.php?m_page=3"> ข้อมูลสมาชิก </a></li>
 					<li class="Page6" id="limenuHead"><a href="admin_format_ems.php?m_page=3"> รูปแบบจัดส่ง </a></li>
 					<li class="Page7" id="limenuHead"><a href="admin_board.php?m_page=3"> เว็บบอร์ด </a></li>
-                    <?PHP
+                    <?php
 					  if(!$_SESSION['sess_emp_userid']==""){
 					    echo " <li class=\"Page\" id=\"limenuHead\">
 						<a href=\"logout.php\" title=\"ออกจากระบบ\" class=\"vtip\">ออกระบบ</a></li>";

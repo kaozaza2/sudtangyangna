@@ -21,16 +21,16 @@ include "function.php";
 <body id="Page1">
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -55,7 +55,7 @@ echo "<script>alert('ไม่มีสินค้า')</script>";
 echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 }else{
 ?>
-<?PHP
+<?php
 	//หาภาษี
 	for($i=0;$i<(is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0);$i++){
 
@@ -98,7 +98,7 @@ echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 			  <div align="right"><strong style="color:red;">เลือกรูปแบบการจัดส่งสินค้า</strong> : 
 
                       <select name="txtEms">
-					  <?PHP
+					  <?php
 					  include "connect_db.php";
 					  $sql_ems = mysqli_query($con,"SELECT * FROM $ems ORDER BY ems_price ASC");
 					  while($ems = mysqli_fetch_array($sql_ems )){
@@ -139,7 +139,7 @@ echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
         <span style="padding-top:30px; text-align:center; font-size:11px; ">
         <?php
 if($_POST){

@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 include "connect_db.php";
 
 $sql = mysqli_query($con,"SELECT * FROM ".$product." WHERE prd_id = '".$_GET['ID']."'");

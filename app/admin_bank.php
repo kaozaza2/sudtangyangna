@@ -22,16 +22,16 @@ include "function.php";
 <body id="Page4">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -75,7 +75,7 @@ $c --;2
 ?>
                             <td align="left" valign="top" id="prd_bottom">
 			<div id="prd_photo" style="width: 55px;">
-                                <?PHP
+                                <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['bn_photo']==""){ ?>
                                 <a href="Product/<?=$result['bn_photo']?>" rel="lightbox" title="<?=$result['bn_bank']?>" > <img  class="photo" src="Product/<?=$result['bn_photo']?>" width="48" height="48" border="0" /> </a>
@@ -154,7 +154,7 @@ echo "</center>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

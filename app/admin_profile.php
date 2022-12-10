@@ -22,16 +22,16 @@ include "function.php";
 <body id="Page0">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -74,7 +74,7 @@ $detail_product = substr((string) $result['prd_detail'], 0, 70) . "";
 $c --;2
 ?>
                             <td align="left" valign="top" id="prd_bottom"><div id="prd_photo">
-                                <?PHP
+                                <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['mb_photo']==""){ ?>
                                 <a href="Member/<?=$result['mb_photo']?>" rel="lightbox" title="<?=$result['mb_name']?>" > <img  class="photo" src="Member/<?=$result['mb_photo']?>" width="155" height="186" border="0" /> </a>
@@ -132,7 +132,7 @@ $c --;2
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

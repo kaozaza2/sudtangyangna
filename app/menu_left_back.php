@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?PHP
+<?php
 include "connect_db.php";
 $sql_emp = mysqli_query($con,"SELECT * FROM ".$member." WHERE mb_id='".$_SESSION['sess_emp_id']."'");
 $rs_emp = mysqli_fetch_array($sql_emp);
@@ -38,7 +38,7 @@ if($rs_emp['mb_status']=='1'){
 
 <p style="font-size:20px; padding:5px; font-weight:bold;"><img src="images/diagram_v2-29.png" width="32" height="32" /> เมนูหลัก</p>
 
-<?PHP if($_GET['m_page']==1){ ?>
+<?php if($_GET['m_page']==1){ ?>
 
 <div class="title_data_type"><img src="images/diagram_v2-28.png" width="32" height="32" /> ใบสั่งซื้อ</div>
    <ul class="ul_type" style="margin-top: 3px; margin-left: 5px;">
@@ -69,7 +69,7 @@ if($rs_emp['mb_status']=='1'){
 <div style="padding:10px; font-size:15px; font-weight:bold; color:#FF0000; border-bottom: 1px solid #ddd;">
 				  <select name="select_year" id="select_year" onchange="window.location='admin_product_type.php?m_page=3&ID='+this.value+''" style="width: 170px; height:22px;">
  <option value="0">เลือกดูสินค้าตามประเภทสินค้า</option>
- <?PHP
+ <?php
 							include "connect_db.php";
 							$Query = mysqli_query($con,"SELECT * FROM ".$product_type." ORDER BY type_id ASC");
 							while($rs=mysqli_fetch_array($Query)) {

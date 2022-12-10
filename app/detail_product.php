@@ -157,7 +157,7 @@ while($result = mysqli_fetch_array($Query)){
 $detail_product = substr((string) $result['prd_detail'], 0, 33) . "...";
 $c --;2
 ?>
-<?PHP
+<?php
 if(!empty($result['prd_photo'])){
 		        $xy = @getimagesize("Product/".$result['prd_photo']."");
                         $tx = $xy[0];
@@ -170,7 +170,7 @@ if(!empty($result['prd_photo'])){
 }
 ?>
                           <td align="left" valign="top" id="prd_bottom"><div id="prd_photo">
-                              <?PHP
+                              <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['prd_photo']==""){ ?>
                               <a href="detail_product.php?ID=<?php echo $result['prd_id']; ?>"><img  class="photo" src="Product/<?php echo $result['prd_photo']; ?>" width="<?php echo $x; ?>" height="<?php echo $y; ?>"/></a>
@@ -223,8 +223,8 @@ if(!empty($result['prd_photo'])){
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
-        <?PHP
+        <?php include "footer.php"; ?>
+        <?php
 			if($_POST['add_basket']){
 				echo "<meta http-equiv='refresh' content='0; url=add_basket_product.php?ID=".$_POST['ID']."&txt_num=1'>";
 			}else if($_POST['btn_detail']){

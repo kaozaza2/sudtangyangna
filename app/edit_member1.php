@@ -26,16 +26,16 @@ include "function.php";
 <body id="Page0">
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -46,7 +46,7 @@ include "function.php";
               <h2><img src="images/pencil_48.png" width="48" height="48" /> แก้ไขข้อมูลส่วนตัว </h2>
           </div>
             <table width="99%" border="0" align="center" style="border-bottom: 1px solid #f3f3f3;">
-              <?PHP 
+              <?php 
 		include "connect_db.php";
 		$sql2 = mysqli_query($con,"SELECT * FROM ".$member." WHERE mb_id = '".$_GET['ID']."'");
 		$rs1 = mysqli_fetch_array($sql2);
@@ -163,7 +163,7 @@ include "function.php";
                       </tr>
                       <tr>
                         <td height="25" align="right" valign="middle"><strong>รูป : </strong></td>
-                        <td height="25" align="left" valign="middle"><?PHP
+                        <td height="25" align="left" valign="middle"><?php
 							if(!$rs1['mb_photo']==""){	?>
                             <ul style="list-style: none;">
                               <li id="liPhoto"> <a href="Member/<?=$rs1['mb_photo']?>" rel="lightbox" title="<?=$rs1['mb_name']?>" > <img class="photo" src="Member/<?=$rs1['mb_photo']?>" width="150" height="180" border="0" /> </a> </li>
@@ -216,8 +216,8 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
-        <?PHP
+        <?php include "footer.php"; ?>
+        <?php
 if($_POST){
 
 

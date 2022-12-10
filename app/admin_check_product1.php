@@ -22,16 +22,16 @@ include "function.php";
 <body id="Page4">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -200,7 +200,7 @@ while($Result=mysqli_fetch_array($qr)){
 						</td>
                       </tr>
                     </li>
-                    <?PHP $no++; $i++?>
+                    <?php $no++; $i++?>
                     <?php } ?>
                   </table>
                 </ul>
@@ -226,7 +226,7 @@ while($Result=mysqli_fetch_array($qr)){
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

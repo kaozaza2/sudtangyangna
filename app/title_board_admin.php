@@ -21,16 +21,16 @@ include "function.php";
 <body id="Page7">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -41,7 +41,7 @@ include "function.php";
               <h2><img src="images/diagram-04.png" width="48" height="48" /> เว็บบอร์ด กระทู้ถาม-ตอบ </h2>
           </div>
               <table width="100%" height="100" border="0" cellpadding="0" cellspacing="0" style="border-bottom: 5px solid #FF9933;">
-                <?PHP 
+                <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 		$sql_select = mysqli_query($con,"SELECT * FROM ".$board_question." WHERE topic_id='".$_GET['ID']."'");
@@ -65,7 +65,7 @@ include "function.php";
                       ] </div></td>
                 </tr>
               </table>
-            <?PHP 
+            <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 		$sql_select1 = mysqli_query($con,"SELECT * FROM ".$board_answer." WHERE ans_IDtopic='".$_GET['ID']."' ORDER BY ans_id ASC");
@@ -86,14 +86,14 @@ include "function.php";
                         ] </div></td>
                 </tr>
             </table>
-            <?PHP 
+            <?php 
 }
 ?>
               <p>&nbsp;</p>
             <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td height="50" colspan="4" align="left" valign="middle" style="border-bottom: 1px solid #f4f4f4;"><div style="padding: 5px; font-size:15px; font-weight:bold; border-bottom: 1px solid #eee;">
-                      <form action="<?PHP $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
+                      <form action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
                         <script language="JavaScript" type="text/javascript">
 		function check_txt(){
 			if(document.form1.txt_name.value==""){
@@ -143,7 +143,7 @@ include "function.php";
                         </table>
                       </form>
                   </div></td>
-                  <?PHP 
+                  <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 $Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
@@ -157,7 +157,7 @@ include "function.php";
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sell"><strong>อ่าน</strong></td>
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sellright"><strong>ตอบ</strong></td>
                 </tr>
-                <?PHP
+                <?php
 		$i = 1;
 		while($result = mysqli_fetch_array($sql_select)){
 		$sql_select1 = mysqli_query($con,"SELECT * FROM ".$board_answer."  WHERE ans_IDtopic='".$result['topic_id']."'");
@@ -191,8 +191,8 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
-        <?PHP
+        <?php include "footer.php"; ?>
+        <?php
 if($_POST){
 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";

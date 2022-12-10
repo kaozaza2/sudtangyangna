@@ -28,16 +28,16 @@ include "function.php";
 <body id="Page0">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -53,7 +53,7 @@ include "function.php";
                     <td align="left" valign="top"><form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" id="FMemBer" name="FMemBer" onsubmit="return CHMEMBER();">
                           <p>&nbsp;</p>
                           <table width="99%" border="0" cellpadding="0" cellspacing="0">
-                            <?PHP 
+                            <?php 
 	include "connect_db.php";
 		$sql2 = mysqli_query($con,"SELECT * FROM ".$member." WHERE mb_id = '".$_GET['ID']."'");
 		$rs1 = mysqli_fetch_array($sql2);
@@ -119,7 +119,7 @@ include "function.php";
                             </tr>
                             <tr>
                               <td align="right" valign="middle"><strong>รูป : </strong></td>
-                              <td height="25" align="left" valign="middle"><?PHP
+                              <td height="25" align="left" valign="middle"><?php
 							if(!$rs1['mb_photo']==""){	?>
                                 <ul style="list-style: none;">
                                   <li id="\&quot;liPhoto\&quot;"> <a href="Member/<?=$rs1['mb_photo']?>" rel="lightbox" title="<?=$rs1['mb_name']?>" > <img class="photo" src="Member/<?=$rs1['mb_photo']?>" width="150" height="180" border="0" /> </a> </li>
@@ -168,8 +168,8 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-<?PHP include "footer.php"; ?>
- <?PHP
+<?php include "footer.php"; ?>
+ <?php
 include "connect_db.php";
 
 if($_POST){

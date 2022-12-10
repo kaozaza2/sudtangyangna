@@ -21,16 +21,16 @@ include "function.php";
 <body id="Page7">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -48,7 +48,7 @@ include "function.php";
 				  </form>
 		    </div>
             <table width="99%" border="0" cellpadding="0" cellspacing="0" style="border-left: 1px solid #f4f4f4; padding-left: 5px;">
-              <?PHP 
+              <?php 
 			  //ติดต่อฐานข้อมูล
 			 include "connect_db.php";
 			  $sql_select = mysqli_query($con,"SELECT * FROM ".$board_question." WHERE (topic_title LIKE '%".$_POST['txtSearch']."%') ORDER BY topic_id DESC ");
@@ -66,7 +66,7 @@ include "function.php";
                 <td width="8%" height="35" align="center" valign="middle" bgcolor="#E99815" class="sell"><strong>ตอบ</strong></td>
                 <td width="6%" height="35" align="center" valign="middle" bgcolor="#E99815" class="sellright"><strong>ลบ</strong></td>
               </tr>
-              <?PHP
+              <?php
 			  $i = 1;
 			  while($result = mysqli_fetch_array($sql_select)){
 			  	$sql_select1 = mysqli_query($con,"SELECT * FROM ".$board_answer."  WHERE ans_IDtopic='".$result['topic_id']."'");
@@ -101,7 +101,7 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

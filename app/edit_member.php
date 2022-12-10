@@ -28,16 +28,16 @@ include "function.php";
 <body id="Page5">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -49,7 +49,7 @@ include "function.php";
                     <h2><img src="images/pencil_48.png" width="48" height="48" />แก้ไขสมาชิก</h2>
                 </div>
 				<table width="99%" border="0" align="center" style="border-bottom: 1px solid #f3f3f3;">
-<?PHP 
+<?php 
 		include "connect_db.php";
 		$sql2 = mysqli_query($con,"SELECT * FROM ".$member." WHERE mb_id = '".$_GET['ID']."'");
 		$rs1 = mysqli_fetch_array($sql2);
@@ -166,7 +166,7 @@ include "function.php";
                           </tr>
                           <tr>
                             <td height="25" align="right" valign="middle"><strong>รูป : </strong></td>
-                            <td height="25" align="left" valign="middle"><?PHP
+                            <td height="25" align="left" valign="middle"><?php
 							if(!$rs1['mb_photo']==""){	?>
                               <ul style="list-style: none;">
                                 <li id="liPhoto"> <a href="Member/<?=$rs1['mb_photo']?>" rel="lightbox" title="<?=$rs1['mb_name']?>" > <img class="photo" src="Member/<?=$rs1['mb_photo']?>" width="150" height="180" border="0" /> </a> </li>
@@ -239,7 +239,7 @@ $detail_product = substr((string) $result['prd_detail'], 0, 70) . "";
 $c --;2
 ?>
                             <td align="left" valign="top" id="prd_bottom"><div id="prd_photo" style="width: 130px;">
-                                <?PHP
+                                <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['mb_photo']==""){ ?>
 								<a href="Member/<?=$result['mb_photo']?>" rel="lightbox" title="<?=$result['mb_name']?>" > 
@@ -257,7 +257,7 @@ $c --;2
                                     <li><strong>เบอร์โทร</strong>: <?=$result['mb_tel']?> </li>
                                     <li><strong>Email </strong>: <?=$result['mb_email']?></li>
                                     <li style="padding-top:5px;">
-						<?PHP if($_SESSION['sess_emp_status']=='1'){ ?>
+						<?php if($_SESSION['sess_emp_status']=='1'){ ?>
 									<a href="edit_member.php?m_page=<?=$_GET['m_page']?>&ID=<?=$result['mb_id']?>"> แก้ไข </a> | 
 									<a href="del_member.php?m_page=<?=$_GET['m_page']?>&ID=<?=$result['mb_id']?>"  onclick="return confirm('ยืนยัน ลบสมาชิก <?=$result['mb_name']?> ออกจากระบบ')"> ลบ </a>		<? }else{ ?>
 									<a href="#" style="color:#333;"  onclick=" return confirm('สำหรับผู้ดูแลระบบเท่านั้น')"> แก้ไข </a> | 
@@ -326,8 +326,8 @@ echo "</center>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-<?PHP include "footer.php"; ?>
-<?PHP
+<?php include "footer.php"; ?>
+<?php
 if($_POST){
 
 if(!is_numeric($_POST['txtTel'])) { 

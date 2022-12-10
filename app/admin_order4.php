@@ -25,16 +25,16 @@ include "function.php";
 <body id="Page1">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -180,7 +180,7 @@ while($Result=mysqli_fetch_array($qr)){
                             <td width="12%" height="20" align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?=$code?></td>
                             <td width="34%" height="20" align="left" valign="middle" bgcolor="#F0F0F0" class="sell1" style="padding-left: 5px;"><?=$Result['ord_name']?></td>
                             <td width="13%" height="20" align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?=number_format($Result['ord_total'],2)?></td>
-                            <td width="14%" height="20" align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?PHP
+                            <td width="14%" height="20" align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?php
 // ถ้าสถานะเท่ากับ Y  คือ  ข้อมูลสั่งซื้อสิค้าใหม่ยังไม่ชำระเงิน
 	if($Result['ord_status']=='Y'){
 						echo "<samp style='color: red;'>ยังไม่ชำระเงิน</samp>";
@@ -212,7 +212,7 @@ while($Result=mysqli_fetch_array($qr)){
                             <td width="15%" height="20" align="center" valign="middle" bgcolor="#F0F0F0" class="sellright1"> [<a href="cancle_order.php?m_page=<?=$_GET['m_page']?>&amp;ID_admin=<?=$Result['ord_id']?>" onclick=" return confirm('ต้องการยกเลิกใบสั่งซื้อ <?=$code?> ')">ยกเลิก</a> | <a href="del_order.php?m_page=<?=$_GET['m_page']?>&amp;ID_admin=<?=$Result['ord_id']?>" onclick=" return confirm('ยืนยันการลบใบสั่งซื่้อ <?=$code?> ออกจากระบบ')">ลบ</a>] </td>
                           </tr>
                         </li>
-                        <?PHP $no++; $i++?>
+                        <?php $no++; $i++?>
 <?php } ?>
                       </table>
                     </ul>
@@ -244,7 +244,7 @@ while($Result=mysqli_fetch_array($qr)){
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

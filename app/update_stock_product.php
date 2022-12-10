@@ -7,7 +7,7 @@
 
 <body>
 <p>
-<?PHP
+<?php
 	include "connect_db.php";
 
 $_POST['id_prd'];

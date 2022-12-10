@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 include "connect_db.php";
 
 $sql = mysqli_query($con,"SELECT * FROM ".$bank." WHERE bn_id = '".$_GET['ID']."'");

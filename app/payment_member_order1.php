@@ -27,16 +27,16 @@ include "function.php";
 </iframe>
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -49,7 +49,7 @@ include "function.php";
             <table height="400" border="0" cellpadding="0" cellspacing="0" style="border:0px; width:100%; padding:0px; margin:0px;">
               <tr>
                 <td align="left" valign="top"><p>
-                    <?PHP
+                    <?php
 				include "connect_db.php";
 				$sql = mysqli_query($con,"SELECT * FROM ".$order." WHERE ord_id='".$_GET['ID']."'");
 				$rs = mysqli_fetch_array($sql);
@@ -114,7 +114,7 @@ include "function.php";
 
 <select name="txt_bank" id="txt_bank" onchange="window.location='payment_member_order1.php?ID=<?=$_GET['ID']?>&amp;Id_bn='+this.value+''" style="width: 70%; height:22px;">
                               <option value="0">เลือกธนาคารที่คุณชำระเงิน</option>
-                              <?PHP
+                              <?php
 							include "connect_db.php";
 							$Query = mysqli_query($con,"SELECT * FROM ".$bank." ORDER BY bn_id ASC");
 							while($rs=mysqli_fetch_array($Query)) {
@@ -137,7 +137,7 @@ include "function.php";
                         </tr>
                         <tr>
                           <td height="25"><div style="padding-right: 2px; text-align:right; font-weight:bold;">จำนวนเงินที่โอน : </div></td>
-                          <?PHP
+                          <?php
 				include "connect_db.php";
 				$sql_ord= mysqli_query($con,"SELECT * FROM ".$order." WHERE ord_id='".$_GET['ID']."'");
 				$rs_ord = mysqli_fetch_array($sql_ord);
@@ -156,7 +156,7 @@ include "function.php";
                           <td height="25"><span style="padding:5px;">
                             <select name="txt_H">
                               <option value="0">ชั่วโมง</option>
-                              <?PHP
+                              <?php
 						 	for($H=1; $H<=24; $H++){
 							
 								if($_POST['txt_H'] == $H){
@@ -170,7 +170,7 @@ include "function.php";
                             :
                             <select name="txt_I">
                               <option value="0">นาที</option>
-                              <?PHP
+                              <?php
 						 	for($I=1; $I<=60; $I++){
 							
 								if($_POST['txt_I'] == $I){
@@ -216,9 +216,9 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
         <span style="padding-top:30px; text-align:center; font-size:11px; ">
-        <?PHP
+        <?php
 if($_POST){
 	//ติดต่อฐานข้อมูล
 	include "connect_db.php";

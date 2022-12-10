@@ -25,16 +25,16 @@ include "function.php";
 <body id="Page3">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -44,7 +44,7 @@ include "function.php";
           <td align="left" valign="top"><div class="title">
             <h2><img src="images/pencil_48.png" width="48" height="48" /> แก้ไขสินค้า</h2>
           </div>
-		  <form action="<?PHP $_SERVER['PHP_SELF']?>" method="post"  id="form1"  name="form1" enctype="multipart/form-data" onsubmit="return chk_txt();">
+		  <form action="<?php $_SERVER['PHP_SELF']?>" method="post"  id="form1"  name="form1" enctype="multipart/form-data" onsubmit="return chk_txt();">
             <p>
               <script language="JavaScript" type="text/javascript">
 				  	function chk_txt(){
@@ -81,7 +81,7 @@ include "function.php";
               </p>
             <p>&nbsp;</p>
  <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
- <?PHP
+ <?php
  	include "connect_db.php";
 	$sql_select = mysqli_query($con,"SELECT * FROM $product WHERE prd_id='".$_GET['ID']."'");
 	$rs = mysqli_fetch_array($sql_select);
@@ -129,7 +129,7 @@ include "function.php";
     <tr>
       <td height="25" align="right" valign="middle"><strong>รูปสินค้า : </strong></td>
       <td height="25">
-	  <?PHP
+	  <?php
 if(!empty($rs['prd_photo'])){
 		        $xy = @getimagesize("Product/".$rs['prd_photo']."");
                         $tx = $xy[0];
@@ -141,7 +141,7 @@ if(!empty($rs['prd_photo'])){
 			$y = $y * 200;
 }
 ?>
-	  <?PHP
+	  <?php
 							if(!$rs['prd_photo']==""){	?>
 							<ul style="list-style: none;">
 					  						<li id=\"liPhoto\">
@@ -191,8 +191,8 @@ if(!empty($rs['prd_photo'])){
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-<?PHP include "footer.php"; ?>
-<?PHP
+<?php include "footer.php"; ?>
+<?php
 if($_POST){
 
 

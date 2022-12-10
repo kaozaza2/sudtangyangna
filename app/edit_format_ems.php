@@ -25,16 +25,16 @@ include "function.php";
 <body id="Page3">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -47,12 +47,12 @@ include "function.php";
               <p>&nbsp;</p>
 
 <table width="99%" border="0">
-<?PHP
+<?php
 	include "connect_db.php";
 		$sql = mysqli_query($con,"SELECT * FROM ".$ems." WHERE ems_id='".$_GET['ID']."'");
 		$rs = mysqli_fetch_array($sql);
 ?>		
-            <form action="<?PHP $_SERVER['PHP_SELF']?>" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return chk_txt();" >
+            <form action="<?php $_SERVER['PHP_SELF']?>" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return chk_txt();" >
                 <script language="JavaScript" type="text/javascript">
 				  	function chk_txt(){
 							if(document.form1.txt_name.value==""){
@@ -201,9 +201,9 @@ echo "</center>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
         <span style="padding-top:30px; text-align:center; font-size:11px; ">
-        <?PHP 
+        <?php 
 		//ติดต่อฐานข้อมูล
 	  	include "connect_db.php";
 		

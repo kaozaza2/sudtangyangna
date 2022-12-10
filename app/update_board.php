@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP 
+<?php 
 			 include "connect_db.php";
 			 if(!$_GET['ID']==""){
 			  $sql_select = mysqli_query($con,"SELECT * FROM ".$board_question." WHERE topic_id='".$_GET['ID']."'");

@@ -25,16 +25,16 @@ include "function.php";
 <body id="Page7">
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -51,7 +51,7 @@ include "function.php";
               <p>&nbsp;</p>
 
 <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
- <?PHP 
+ <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 $sql_num = mysqli_query($con,"SELECT * FROM ".$board_question."");
@@ -61,7 +61,7 @@ include "function.php";
 <td height="50" colspan="4" align="left" valign="middle" style="border-bottom: 1px solid #f4f4f4;"><div style="padding:10px; font-size:15px; font-weight:bold; border-bottom: 1px solid #eee;">
 
       <table width="100%" border="0">
-	  <form action="<?PHP echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
+	  <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
  <script language="JavaScript" type="text/javascript">
 		function check_txt(){
 			if(document.form1.txt_name.value==""){
@@ -141,7 +141,7 @@ include "function.php";
 
  </div>
  </td>
- <?PHP 
+ <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 $Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
@@ -155,7 +155,7 @@ include "function.php";
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sell"><strong>อ่าน</strong></td>
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sellright"><strong>ตอบ</strong></td>
                 </tr>
-<?PHP
+<?php
 		$i = 1;
 		while($result = mysqli_fetch_array($sql_select)){
 		$sql_select1 = mysqli_query($con,"SELECT * FROM ".$board_answer."  WHERE ans_IDtopic='".$result['topic_id']."'");
@@ -190,8 +190,8 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
-        <?PHP
+        <?php include "footer.php"; ?>
+        <?php
 	if($_POST){
 	include "connect_db.php";
 	$date_time = date("Y-m-d H:i:s", mktime(date("H")+0, date("i")+0, date("s")+0, date("m")+0 , date("d")+0, date("Y")+0));

@@ -26,16 +26,16 @@ include "function.php";
 <body id="Page3">
 <div id="container">
   <div id="bander_back">
-    <?PHP include "bander_back.php"; ?>
+    <?php include "bander_back.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top2.php"; ?>
+       	 <?php include "menu_top2.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_back.php"; ?>
+	<?php  include "menu_left_back.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -84,7 +84,7 @@ while($result = mysqli_fetch_array($Query)){
 $detail_product = substr((string) $result['prd_detail'], 0, 70) . "";
 $c --;2
 ?>
-<?PHP
+<?php
 if(!empty($result['prd_photo'])){
 		        $xy = @getimagesize("Product/".$result['prd_photo']."");
                         $tx = $xy[0];
@@ -97,7 +97,7 @@ if(!empty($result['prd_photo'])){
 }
 ?>
  <td align="left" valign="top" id="prd_bottom"><div id="prd_photo">
-                                <?PHP
+                                <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['prd_photo']==""){ ?>
                                 <a href="Product/<?=$result['prd_photo']?>" rel="lightbox" title="<?=$result['prd_name']?>" ><img  class="photo" src="Product/<?=$result['prd_photo']?>" width="<?=$x?>" height="<?=$y?>"/></a>
@@ -206,7 +206,7 @@ echo "</center>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

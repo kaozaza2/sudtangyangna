@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 include "connect_db.php";
 
 

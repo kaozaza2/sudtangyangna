@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
  include "connect_db.php";
 			
 			if(!empty($_GET['ID_admin'])){ //ตรวจสอบข้อมูลจาก $_GET['ID_admin'] ถ้ามีให้ทำคำสั่งด้านล่างนี้

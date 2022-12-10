@@ -1,4 +1,4 @@
-<?PHP
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -109,7 +109,7 @@ border-right: 1px dotted #666;
 <body style="background:#fafafa; padding-top: 20px;">
  <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="PopCalendarXP/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
 </iframe>
-<?PHP
+<?php
 	include "connect_db.php";
 	include "function.php";
 	$sql_select1 = mysqli_query($con,"SELECT * FROM ".$order." WHERE ord_id='".$_GET['ID']."'");
@@ -122,7 +122,7 @@ border-right: 1px dotted #666;
 	
 ?>
 <div id="PrintMember">
- <?PHP
+ <?php
  if(empty($_GET['m_page'])){
  	 if($_GET['ord']==1){
 	echo "<a href='member_order1.php'>&lt;-- ย้อนกลับ </a>";
@@ -148,7 +148,7 @@ border-right: 1px dotted #666;
   	<p style="display:block; padding-top: 10px; font-size:11px; text-align:right; padding-right: 10px;">เลขที่ : 
     <?=sprintf("%05d",$_GET['ID'])?></p>
  	<div style="padding: 10px; text-align:center; font-size:20px;">
-	<?PHP if($status=='Y'){ ?>
+	<?php if($status=='Y'){ ?>
                 <p>ใบสั่งซื้อ</p>
                 <?php }else if($status=='3'){ ?>
                 <p>ใบส่งของ</p>
@@ -157,7 +157,7 @@ border-right: 1px dotted #666;
                 <?php } ?>
  	  
  	  <p style="font-size:13px;">
-	  <?PHP include "footer.php"; ?>
+	  <?php include "footer.php"; ?>
 	   </p>
  	</div>
 	<table width="100%" height="24" border="0" cellpadding="0" cellspacing="0">
@@ -192,7 +192,7 @@ border-right: 1px dotted #666;
         <td class="sellright"  width="16%" height="30" bgcolor="#CCCCCC"><div align="center"><strong>รวม</strong></div></td>
       </tr>
 
-<?PHP
+<?php
 include "connect_db.php";
 	$ii=1;
 	$sql_select3 = mysqli_query($con,"SELECT * FROM ".$product.", ".$order_detail."  WHERE prd_id=od_id_prd AND od_id_ord='".$_GET['ID']."' ");
@@ -242,7 +242,7 @@ include "connect_db.php";
         </u> บาท</div></td>
       </tr>
 	  <tr>
-	   <?PHP
+	   <?php
 					include "connect_db.php";
 					$sql_EMS = mysqli_query($con,"SELECT * FROM ems WHERE ems_id = '".$rs1['ord_idems']."'");
 					$rs = mysqli_fetch_array($sql_EMS);
@@ -272,7 +272,7 @@ include "connect_db.php";
 		<?php if(!empty($_SESSION['sess_emp_id'])){ //ถ้ามีข้อมูลที่อยู่ใน sess_emp_id  ?>
 		<form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" onsubmit="return ChkText();">
 		สถานะใบสั่งซื้อ : 
-		<?PHP if($status=='Y'){ ?>
+		<?php if($status=='Y'){ ?>
                 <input name="btm_product" type="submit" id="btm_product" class="txt_btn"  value="อนุมัติสินค้าทั้งหมด" />
                 <?php }else if($status=='3'){ ?>
                 <input name="btm_product" type="submit" id="btm_product" disabled="disabled" class="txt_btn" style="color:#0066FF;"  value="อนุมัติสินค้าแล้ว" />
@@ -297,7 +297,7 @@ include "connect_db.php";
   </div>
 </div>
 <div id="PrintMember"></div>
-        <?PHP
+        <?php
 include "connect_db.php";
 if($_POST['btn_back']){ // ย้อนกลับ
 

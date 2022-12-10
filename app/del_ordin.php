@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 include "connect_db.php";
 //@unlink("UpFileUser/".$_GET['DelPhoto']);
 $sql_del = mysqli_query($con,"DELETE FROM ".$order_in." WHERE ordin_id='".$_GET['ID']."'");

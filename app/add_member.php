@@ -26,16 +26,16 @@ include "function.php";
 <body id="Page0">
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -170,8 +170,8 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
-        <?PHP
+        <?php include "footer.php"; ?>
+        <?php
 if($_POST){
 
 if(!is_numeric($_POST['txtTel'])) { 

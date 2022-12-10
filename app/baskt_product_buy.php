@@ -87,7 +87,7 @@ echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
                   </u> บาท</div></td>
                 </tr>
 				 <tr>
-				 <?PHP
+				 <?php
 					include "connect_db.php";
 					$sql_EMS = mysqli_query($con,"SELECT * FROM $ems WHERE ems_id = '".$_GET['EmsID']."'");
 					$rs_ems = mysqli_fetch_array($sql_EMS);
@@ -134,7 +134,7 @@ echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
         <span style="padding-top:30px; text-align:center; font-size:11px; ">
         <?php
 		

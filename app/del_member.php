@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<?PHP
+<?php
 //ติดต่อฐานข้อมูล
 include "connect_db.php";
 $sql = mysqli_query($con,"SELECT * FROM ".$member." WHERE mb_id = '".$_GET['ID']."'");

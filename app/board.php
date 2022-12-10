@@ -25,16 +25,16 @@ include "function.php";
 <body id="Page7">
 <div id="container">
   <div id="bander_front">
-    <?PHP include "bander_front.php"; ?>
+    <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -51,7 +51,7 @@ include "function.php";
               <p>&nbsp;</p>
 
 <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
- <?PHP 
+ <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 $sql_num = mysqli_query($con, "SELECT * FROM $board_question");
@@ -70,7 +70,7 @@ include "function.php";
 	</form>
  </div>
  </td>
- <?PHP 
+ <?php 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
 	 $Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
@@ -84,7 +84,7 @@ include "function.php";
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sell"><strong>อ่าน</strong></td>
                   <td width="8%" height="35" align="center" valign="middle" bgcolor="#FDD8E0" class="sellright"><strong>ตอบ</strong></td>
                 </tr>
-<?PHP
+<?php
 		$i = 1;
 		while($result = mysqli_fetch_array($sql_select)){
 		$sql_select1 = mysqli_query($con,"SELECT * FROM ".$board_answer."  WHERE ans_IDtopic='".$result['topic_id']."'");
@@ -119,7 +119,7 @@ include "function.php";
 <div id="footer_front">
 	<div class="data_footer">
       <p>
-        <?PHP include "footer.php"; ?>
+        <?php include "footer.php"; ?>
       </p>
       
 	</div>

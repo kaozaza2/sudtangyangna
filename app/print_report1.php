@@ -213,7 +213,7 @@ while($Result=mysqli_fetch_array($qr)){
                 <td width="13%" height="22" align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?=$id_ordin?></td>
                 <td align="left" valign="middle" bgcolor="#F0F0F0" class="sell1">&nbsp;
                     <?=$Result['ord_name']?></td>
-                <td align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?PHP
+                <td align="center" valign="middle" bgcolor="#F0F0F0" class="sell1"><?php
 // ถ้าสถานะเท่ากับ Y  คือ  ข้อมูลสั่งซื้อสิค้าใหม่ยังไม่ชำระเงิน
 	if($Result['ord_status']=='Y'){
 						echo "<samp style='color: red;'>ยังไม่ชำระเงิน</samp>";
@@ -245,7 +245,7 @@ while($Result=mysqli_fetch_array($qr)){
                   บาท </td>
               </tr>
             </li>
-	        <?PHP $no++; $i++?>
+	        <?php $no++; $i++?>
             <?php 
 	
 	$total_price= $total_price + $Result['ord_total'];

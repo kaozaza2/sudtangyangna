@@ -27,13 +27,13 @@ include "function-page.php";
     <?php include "bander_front.php"; ?>
     <div id="menu_top">
      	 <p>
-       	 <?PHP include "menu_top1.php"; ?>
+       	 <?php include "menu_top1.php"; ?>
       	</p>
     </div>
   </div>
   
  <div class="menu_left"><!-- เมนูด้านซ้าย -->
-	<?PHP  include "menu_left_front.php"; ?>
+	<?php  include "menu_left_front.php"; ?>
   </div><!-- จบเมนูด้านซ้าย --> 
 
 <div class="data_center"><!-- ส่วนกลางของเว็บ -->
@@ -73,7 +73,7 @@ while($result = mysqli_fetch_array($Query)){
 $detail_product = substr((string) $result['prd_detail'], 0, 33) . "...";
 $c --;2
 ?>
-<?PHP
+<?php
 if(!empty($result['prd_photo'])){
 		        $xy = @getimagesize("Product/".$result['prd_photo']."");
                         $tx = $xy[0];
@@ -86,7 +86,7 @@ if(!empty($result['prd_photo'])){
 }
 ?>
                           <td align="left" valign="top" id="prd_bottom"><div id="prd_photo">
-                              <?PHP
+                              <?php
 			 // ถ้ามีรูปสินค้าให้แสดง แต่ถ้าไม่มีให้ แสดงภาพรอรูป
 			  if(!$result['prd_photo']==""){ ?>
                               <a href="detail_product.php?ID=<?=$result['prd_id']?>"> <img  class="photo" src="Product/<?=$result['prd_photo']?>" width="<?=$x?>" height="<?=$y?>"/> </a>
@@ -176,7 +176,7 @@ echo "</center>";
 	<div class="data_footer">
       <p>
         <?php include "footer.php"; ?>
-        <?PHP
+        <?php
 			if($_POST['add_basket']){
 				echo "<meta http-equiv='refresh' content='0; url=add_basket_product.php?ID=".$_POST['ID']."&txt_num=1'>";
 			}else if($_POST['btn_detail']){
