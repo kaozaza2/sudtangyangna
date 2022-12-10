@@ -40,7 +40,7 @@ include "function.php";
 		    <h2><img src="images/plus_48.png" width="48" height="48" /> เพิ่มประเภทสินค้า</h2>
       </div>
 	  	  <p>&nbsp;</p>
-	  	  <form action="<?php $_SERVER['PHP_SELF']?>" method="post"  id="form1"  name="form1" onsubmit="return CHLogIn();">
+	  	  <form action="#" method="post"  id="form1"  name="form1" onsubmit="return CHLogIn();">
                   <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="17%" height="25" align="right" valign="middle"><strong>ประเภทสินค้า : </strong></td>

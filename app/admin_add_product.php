@@ -44,7 +44,7 @@ include "function.php";
           <td align="left" valign="top"><div class="title">
             <h2><img src="images/plus_48.png" width="48" height="48" /> เพิ่มสินค้าเข้าระบบ</h2>
           </div>
-		  <form action="<?php $_SERVER['PHP_SELF']?>" method="post"  id="form1"  name="form1" enctype="multipart/form-data" onsubmit="return chk_txt();">
+		  <form action="#" method="post"  id="form1"  name="form1" enctype="multipart/form-data" onsubmit="return chk_txt();">
             <p>
               <script language="JavaScript" type="text/javascript">
 				  	function chk_txt(){

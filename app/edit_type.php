@@ -40,7 +40,7 @@ include "function.php";
 		    <h2><img src="images/pencil_48.png" width="48" height="48" /> แก้ไขประเภทสินค้า</h2>
       </div>
 	  	  <p>&nbsp;</p>
-<form action="<?php $_SERVER['PHP_SELF']?>" method="post"  id="form1"  name="form1" onsubmit="return CHLogIn();">
+<form action="#" method="post"  id="form1"  name="form1" onsubmit="return CHLogIn();">
  <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
 <?php
 	include "connect_db.php";
