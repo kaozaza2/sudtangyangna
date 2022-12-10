@@ -43,7 +43,7 @@ include "function.php";
                     <h2><img src="images/pencil_48.png" width="48" height="48" />แก้ไขข้อมูลธนาคาร</h2>
                 </div>
 				<p>&nbsp;</p>				
-				<form action="#" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return chk_txt();" >
+				<form action="<?php $_SERVER['PHP_SELF']?>" method="post" name="form1" id="form1" enctype="multipart/form-data" onsubmit="return chk_txt();" >
 				                    <script language="JavaScript" type="text/javascript">
 				  	function chk_txt(){
 							if(document.form1.txt_bank.value==""){

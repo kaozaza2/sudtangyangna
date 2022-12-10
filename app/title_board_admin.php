@@ -93,7 +93,7 @@ include "function.php";
             <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                   <td height="50" colspan="4" align="left" valign="middle" style="border-bottom: 1px solid #f4f4f4;"><div style="padding: 5px; font-size:15px; font-weight:bold; border-bottom: 1px solid #eee;">
-                      <form action="#" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
+                      <form action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" name="form1" id="form1" style="margin: 5px;" onsubmit="return check_txt();">
                         <script language="JavaScript" type="text/javascript">
 		function check_txt(){
 			if(document.form1.txt_name.value==""){
