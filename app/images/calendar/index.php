@@ -27,27 +27,27 @@ $username = "user";
 $password = "pass";
 
 // Name of the month, in the language you want.
-$january = 'มกราคม';
-$february = 'กุมพาพันธ์';
-$march = 'มีนาคม';
-$april = 'เมษายน';
-$may = 'พฤษภาคม';
-$june = 'มิถุนายน';
-$july = 'กรกฎาคม';
-$august = 'สิงหาคม';
-$september = 'กันยายน';
-$october = 'ตุลาคม';
-$november = 'พฤศจิกายน';
-$december = 'ธันวาคม';
+$january = '???าค?';
+$february = '????าพัน??';
+$march = '?ีนาค?';
+$april = '????ยน';
+$may = '????าค?';
+$june = '?ิถุน?ยน';
+$july = '?รก?าค?';
+$august = '?ิง?าค?';
+$september = '?ัน??ยน';
+$october = '???าค?';
+$november = '??ศจิก?ยน';
+$december = '?ัน?าค?';
 
 // Name of the days, in the language you want.
-$monday = "จ";
-$tuesday = "อ"; 
-$wednesday = "พ";
-$thursday = "พฤ";
-$friday = "ศ";
-$saturday = "ส";
-$sunday = "อ";
+$monday = "?";
+$tuesday = "?"; 
+$wednesday = "?";
+$thursday = "??";
+$friday = "?";
+$saturday = "?";
+$sunday = "?";
 
 // If you wish the calendar to start the week with Monday, leave this true.
 // Else edit it to "false", to make the week start with Sunday.
@@ -101,13 +101,12 @@ $event2 = "#CCCCCC";
 // Start of actual code, no need to change ////////////////////
 //
 if($startwithmonday) {
-	$dayName = array($monday, $tuesday, $wednesday, $thursday, $friday, $saturday,$sunday);
+	$dayName = [$monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday];
 } else {
-	$dayName = array($sunday, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday);
+	$dayName = [$sunday, $monday, $tuesday, $wednesday, $thursday, $friday, $saturday];
 }
 
-$monthName = array($january, $february, $march, $april, $may, $june, $july, $august, $september, $october,
-$november, $december);
+$monthName = [$january, $february, $march, $april, $may, $june, $july, $august, $september, $october, $november, $december];
 
 if(isset($_GET['act'])){
 	$act = $_GET['act'];
@@ -257,9 +256,10 @@ echo "-->\n</STYLE>\n\n";
 //
 function createMonth($date) {
 	
-	global $startwithmonday;
+	$monthArray = [];
+ global $startwithmonday;
 	
-	$date = split("\-", $date);
+	$date = preg_split('#\-#m', (string) $date);
 	$year = $date[0];
 	$month = $date[1];
 	
@@ -291,18 +291,18 @@ function createMonth($date) {
 	}
 	
 		
-	// F๖rra
+	// F?rra
 	for($I = 1; $I < $this_month_first_day; $I++) {
 		$temp = $last_month_days - $this_month_first_day + $I + 1;
-		$monthArray["$last_month_year-$last_month_number-$temp"] = array(0, "$last_month_year-$last_month_number-$temp");
+		$monthArray["$last_month_year-$last_month_number-$temp"] = [0, "$last_month_year-$last_month_number-$temp"];
 	}
-	// Mๅnad.
+	// M?nad.
 	for($I = 1; $I <= $this_month_days; $I++) {
-		$monthArray["$this_month_year-$this_month_number-$I"] = array(1, "$this_month_year-$this_month_number-$I");
+		$monthArray["$this_month_year-$this_month_number-$I"] = [1, "$this_month_year-$this_month_number-$I"];
 	}
-	// Nไsta
+	// N?sta
 	for($I = 1; $I <= 43 - $this_month_days - $this_month_first_day; $I++) {
-		$monthArray["$next_month_year-$next_month_number-$I"] = array(0, "$next_month_year-$next_month_number-$I");
+		$monthArray["$next_month_year-$next_month_number-$I"] = [0, "$next_month_year-$next_month_number-$I"];
 	}
 return $monthArray;	
 };
@@ -318,7 +318,7 @@ function appendEvent($date, $monthArray) {
 	
 	global $path, $act;
 	
-	$date = split("\-", $date);
+	$date = preg_split('#\-#m', (string) $date);
 	$year = $date[0];
 	$month = $date[1];
 
@@ -337,11 +337,11 @@ function appendEvent($date, $monthArray) {
 		while (!feof($fp))  { 
 			$line = fgets($fp);
 			if($line != "") {
-				$data = split("\#", $line);
-				$date = split("\|", $data[0]);
+				$data = preg_split('#\\\##m', $line);
+				$date = preg_split('#\|#m', (string) $data[0]);
 				$monthArray["$date[0]"][0] = 2;
 				$monthArray["$date[0]"][1] = "$date[0]";
-				$monthArray["$date[0]"][2][] = array("$date[1]", "$data[1]");
+				$monthArray["$date[0]"][2][] = ["$date[1]", "$data[1]"];
 			}
 		}
 	}
@@ -355,7 +355,7 @@ function appendEvent($date, $monthArray) {
 // Function for adding the current day ////////////////////////
 //
 function addToday($date, $monthArray) {
-	$date = split("\-", $date);
+	$date = preg_split('#\-#m', (string) $date);
 	$year = $date[0];
 	$month = $date[1];
 	$this_year = date("Y");
@@ -377,7 +377,7 @@ function displayMonth($date, $monthArray) {
 	
 	global $path, $weekBGColor, $weeknumber, $width, $monthName, $dayName, $monthBGColor, $monthTextColor, $daysBGColor;
 
-	$date = split("\-", $date);
+	$date = preg_split('#\-#m', (string) $date);
 	$year = $date[0];
 	$month = $date[1];
 	
@@ -436,10 +436,10 @@ echo "</TR>\n\n<TR>\n";
 		
 	
 	foreach ($monthArray as $key) {
-		$date = split("\-", $key[1]);
+		$date = preg_split('#\-#m', (string) $key[1]);
 	
 		if($key[0] == 0) {
-		      //  echo "<TD class=\"empty\">$date[2]</TD>\n"; //ส่วนล่าง
+		      //  echo "<TD class=\"empty\">$date[2]</TD>\n"; //??วน??าง
 		} else if($key[0] == 1) {
 			echo "<TD onMouseOver=\"this.className='sel'\" onMouseOut=\"this.className='event'\" class=\"event\">$date[2]</TD>\n";
 		} else if($key[0] == 2) {
@@ -452,7 +452,7 @@ echo "</TR>\n\n<TR>\n";
 	$day++;
 	if($day >= 7) {
 		if($weeknumber) {
-		//	echo "<TD bgcolor=\"$weekBGColor\" class=\"event\">$week</TD>\n"; // ตัว v.
+		//	echo "<TD bgcolor=\"$weekBGColor\" class=\"event\">$week</TD>\n"; // ??? v.
 			if($week >= 53) {
 				$week = 0;
 			}
@@ -481,7 +481,7 @@ function displayEvent($date, $monthArray) {
 	
 	global $event1, $event2 , $monthName;
 	
-	$date = split("\-", $date);
+	$date = preg_split('#\-#m', (string) $date);
 	$year = $date[0];
 	$month = $date[1];
 	$day = $date[2];
@@ -495,7 +495,7 @@ function displayEvent($date, $monthArray) {
 		echo "<TR>\n";
 		echo "<TD width=\"90px\" bgcolor=\"$event1\">\n";
 		
-		$time = split("\-",$key[0]);
+		$time = preg_split('#\-#m',(string) $key[0]);
 		echo "$time[0]";
 		if($time[1] != ":") {
 			echo "-$time[1]";
@@ -546,7 +546,7 @@ function addEvent() {
 		$month = $_POST['calender_month'];
 		$day = $_POST['calender_day'];
 		$date = "$year-$month-$day";
-		$eventArray = array();
+		$eventArray = [];
 		$eventArray = appendEvent($date, $eventArray);
 		
 		$shour = $_POST['calender_shour'];
@@ -558,7 +558,7 @@ function addEvent() {
 		
 		$eventArray["$year-$month-$day"][0] = 2;
 		$eventArray["$year-$month-$day"][1] = "$year-$month-$day";
-		$eventArray["$year-$month-$day"][2][] = array("$shour:$sminut-$ehour:$eminut", $event);
+		$eventArray["$year-$month-$day"][2][] = ["$shour:$sminut-$ehour:$eminut", $event];
 		
 		echo "Event added!<BR/>";
 		echo "<A class=\"A\" HREF=\"./?act=add\">Add new</A>  ";
@@ -577,7 +577,8 @@ function addEvent() {
 //
 function saveEvents($eventArray) {
 	
-	global $path;
+	$data = [];
+ global $path;
 	
 		$year = $_POST['calender_year'];
 		$month = $_POST['calender_month'];

@@ -21,9 +21,9 @@ if($_POST['register']){
 	  $num = mysqli_num_rows($SQL);
 	  
  	if($num == 1){
-	
+
 	  	$value = mysqli_fetch_array($SQL);
-		
+
 		// ตรวจสอบผู้ที่ไม่มีสิทธิ์เข้าใช้ระบบ
 			if($value['mb_status']=='N'){
 			  echo "<script>alert('คุณไม่สิทธิเข้าใช้ระบบแล้ว')</script>";
@@ -44,7 +44,7 @@ if($_POST['register']){
 								echo "<meta http-equiv='refresh' content='0;url=index.php'>"; 
 								exit();
 							}
-					
+
 			   //ลงทะเที่ยนการเข้าใช้่งานระบบ ส่วนของผู้ดูแลระบบ
 				}else if($value['mb_status']=='1' or $value['mb_status']=='2'){
 					$_SESSION['sess_emp_id'] = $value['mb_id'];
@@ -53,17 +53,17 @@ if($_POST['register']){
 					$_SESSION['sess_emp_status'] = $value['mb_status'];
 					$_SESSION['sess_emp_userid'] = session_id();
 					session_write_close();
-					
+
 					$Title_Name = $_SESSION['sess_emp_name'];
-					
+
 							if($_SESSION['sess_emp_status']==1 or $_SESSION['sess_emp_status']==2){
 								echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-874\" />";
 								echo "<script>alert('ยินดีต้อนรับผู้ดูแลระบบ ".$Title_Name." เข้าระบบ')</script>";
 								echo "<meta http-equiv='refresh' content='0;url=admin_main.php?m_page=1'>"; 
 								exit();
 							}
-					
-					
+
+
 			   // เกิดข้อผิดพลา
 			  }else{
 				  echo "<script>alert('ข้อมูลผิดพลา กรุณาลงชื่อเข้าระบบใหม่')</script>";

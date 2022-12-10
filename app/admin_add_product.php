@@ -140,7 +140,7 @@ if(!isset($start)){
 $start = 0;
 }
 $limit = 10;//$NUMMAX; // แสดงผลหน้าละกี่หัวข้อ
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 //
 $Qtotal = mysqli_query($con,"SELECT * FROM  ".$product.""); //คิวรี่ คำสั่ง
 $total = mysqli_num_rows($Qtotal); // หาจำนวน record 
@@ -157,7 +157,7 @@ $c = $cols;
                     <tr>
  <?php
 while($result = mysqli_fetch_array($Query)){
-$DetailPrd = substr($result['prd_detail'], 0, 15) . "...";
+$DetailPrd = substr((string) $result['prd_detail'], 0, 15) . "...";
 $c --;2
 ?>
         <td align="left" valign="top"><div style="text-align:left;  padding:5px; float:left; width: 110px;">
@@ -284,7 +284,7 @@ echo "<script>alert('กรุณากรอกราคาสินค้า�
 	$FileUpLoadtmp = $_FILES['FileUpload'] ['tmp_name'];
 			
 if($FileUpLoadtmp){					 
-	$array_last = explode(".",$FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
+	$array_last = explode(".",(string) $FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
 	$c = count($array_last) - 1; //นับจำนวน จุด "." ของชื่อตัวแปร์ 
 	$lname = strtolower($array_last [$c]); // หา นามสกุลไฟล์ ตัวสุดท้ายของ ตัวแปร์
 	$NewFileupload = date("U"); 

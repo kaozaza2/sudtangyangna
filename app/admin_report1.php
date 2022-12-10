@@ -87,7 +87,7 @@ $date_now1 =substr($date_now,0,10); //ตัดข้อความ เวล�
                   </samp> ถึงวันที่ <samp style="color:red;">
                     <?=displaydate($date_now1)?>
                   </samp> <a href="print_report1.php?m_page=<?=$_GET['m_page']?>&amp;Date1=<?=$date_back1?>&amp;Date2=<?=$date_now1?>" target="_blank"> <img src="images/print001.png" width="22" height="22" border="0" /></a> </p>
-                <?php } ?>
+<?php } ?>
             </div>
             <p>
                 <?php  
@@ -98,6 +98,7 @@ $date_now1 =substr($date_now,0,10); //ตัดข้อความ เวล�
                 <?php     
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า     
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){     
+    $nClass = null;
     global $urlquery_str;  
 	global $id_type;
     $pPrev=$chk_page-1;  
@@ -157,7 +158,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
             <p>
                 <?php  
  
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 
 if($_POST){
 //ทำให้เป็นจำนวนเต็มเพื่อใช้คนหา ตามรหัส

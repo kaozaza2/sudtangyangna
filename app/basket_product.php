@@ -50,14 +50,14 @@ include "function.php";
              <td class="sellright"  width="16%" height="30" bgcolor="#E9E3DB"><div align="center"><strong>รวม</strong></div></td>
            </tr>
            <?php
-if(count($_SESSION['sess_id'])=="0"){
+if((is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0)=="0"){
 echo "<script>alert('ไม่มีสินค้า')</script>";
 echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 }else{
 ?>
 <?PHP
 	//หาภาษี
-	for($i=0;$i<count($_SESSION['sess_id']);$i++){
+	for($i=0;$i<(is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0);$i++){
 
 	$total_unit_price = $_SESSION['sess_num'][$i] * $_SESSION['sess_price'][$i];
 	$total_price = $total_price + $total_unit_price;
@@ -144,10 +144,10 @@ echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
         <?php
 if($_POST){
 
-	if(count($_POST['prd_del'])==0){
-			    $_POST['prd_del']=array();
+	if((is_countable($_POST['prd_del']) ? count($_POST['prd_del']) : 0)==0){
+			    $_POST['prd_del']=[];
 	}
-		for($i=0; $i<count($_SESSION['sess_id']);$i++) {
+		for($i=0; $i<(is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0);$i++) {
 				
 				if (!in_array($_SESSION['sess_id'][$i], $_POST['prd_del'])){
 				
@@ -164,7 +164,7 @@ if($_POST){
 					include "connect_db.php";
 					if(!is_numeric($_POST['prd_num'][$i])){ // ตรวจสอบกรอกจำนวนสินค้าให้ถูก
 								exit("<script>alert('กรุณากรอกจำนวนสินค้าให้ถูกด้วยนะ!');(history.back());</script>");
-								}else if(strpos($_POST['prd_num'][$i],".") !== false){
+								}else if(str_contains($_POST['prd_num'][$i],".")){
 								exit("<script>alert('กรุณากรอกจำนวนสินค้าให้ถูกด้วยนะ!');(history.back());</script>");
 								}
 										//ส่วนของการตรวจสอบ สินค้าที่ลูกค้าสั่งเกิน

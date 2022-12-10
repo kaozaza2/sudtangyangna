@@ -3,9 +3,9 @@
 error_reporting(0);
 error_reporting(E_ERROR | E_PARSE);
 function displaydate_eng($x) {
-	$thai_m=array("January","February","March","April","May","June","July","August","September","October","November","December");
-	$txt = substr($x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
-	$time = substr($x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
+	$thai_m=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	$txt = substr((string) $x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
+	$time = substr((string) $x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
 	$date_array=explode("-",$txt);
 	$y=$date_array[0];
 	$m=$date_array[1]-1;
@@ -19,9 +19,9 @@ function displaydate_eng($x) {
 }
 $chkpage='phone';
 function displaydate($x) {
-	$thai_m=array("มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
-	$txt = substr($x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
-	$time = substr($x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
+	$thai_m=["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+	$txt = substr((string) $x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
+	$time = substr((string) $x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
 	$date_array=explode("-",$txt);
 	$y=$date_array[0];
 	$m=$date_array[1]-1;
@@ -35,9 +35,9 @@ function displaydate($x) {
 }
 
 function datetime($x) {
-	$thai_m=array("มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
-	$txt = substr($x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
-	$time = substr($x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
+	$thai_m=["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+	$txt = substr((string) $x,0,10); //ตัดข้อความ เวลาออก 2012-08-05 17:35:20
+	$time = substr((string) $x,10); //ตัดข้อความ วันที่ออก 2012-08-05 17:35:20
 	$date_array=explode("-",$txt);
 	$y=$date_array[0];
 	$m=$date_array[1]-1;
@@ -51,7 +51,7 @@ function datetime($x) {
 }
 
 function checkemail($checkemail){
-	if(ereg( "^[^@]+@([a-zA-Z0-9\-]+\.)+([a-zA-z0-9\-](2)|net|com|gov|mil|org|edu|int|co.th)$",$checkemail)){
+	if(preg_match( '#^[^@]+@([a-zA-Z0-9\\\\\-]+\.)+([a-zA-z0-9\\\\\-](2)|net|com|gov|mil|org|edu|int|co.th)$#m',(string) $checkemail)){
 		return true ;
 		
 	}else{

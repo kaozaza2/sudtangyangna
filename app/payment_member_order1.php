@@ -233,7 +233,7 @@ if($_POST){
 	$FileUpLoadtmp = $_FILES['FileUpload'] ['tmp_name'];
 			
 if($FileUpLoadtmp){					 
-	$array_last = explode(".",$FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
+	$array_last = explode(".",(string) $FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
 	$c = count($array_last) - 1; //นับจำนวน จุด "." ของชื่อตัวแปร์ 
 	$lname = strtolower($array_last [$c]); // หา นามสกุลไฟล์ ตัวสุดท้ายของ ตัวแปร์
 	$NewFileupload = date("U"); 
@@ -242,7 +242,7 @@ if($FileUpLoadtmp){
 	
 $H = $_POST['txt_H'];
 $I = $_POST['txt_I'];
-$Ar_Date = explode("-",$_POST['txtDate_start']);
+$Ar_Date = explode("-",(string) $_POST['txtDate_start']);
 $Y = $Ar_Date[0];
 $M = $Ar_Date[1];
 $D = $Ar_Date[2];

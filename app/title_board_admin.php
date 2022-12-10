@@ -146,7 +146,7 @@ include "function.php";
                   <?PHP 
 	 //ติดต่อฐานข้อมูล
 	 include "connect_db.php";
-	 $Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+	 $Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 	 $sql_select = mysqli_query($con,"SELECT * FROM ".$board_question." WHERE(topic_title LIKE '%".$Search."%') ORDER BY topic_id DESC ");
 	$num = mysqli_num_rows($sql_select);
 	 ?>

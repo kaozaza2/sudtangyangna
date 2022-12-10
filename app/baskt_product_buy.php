@@ -53,14 +53,14 @@ include "function.php";
 				
  
 				
-if(count($_SESSION['sess_id'])=="0"){
+if((is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0)=="0"){
 echo "<script>alert('ไม่มีสินค้า')</script>";
 echo "<meta http-equiv='refresh' content='0; url=product_new.php'>";
 }else{
 ?>
                 <?php
 	//หาภาษี
-	for($i=0;$i<count($_SESSION['sess_id']);$i++){
+	for($i=0;$i<(is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0);$i++){
 
 	$total_unit_price = $_SESSION['sess_num'][$i] * $_SESSION['sess_price'][$i];
 	$total_price = $total_price + $total_unit_price;
@@ -167,7 +167,7 @@ $sql_add = mysqli_query($con,"INSERT INTO ".$order." VALUES "
 					$status = 'N';
 					$approve=0;
 					
-for($i=0;$i<count($_SESSION['sess_id']);$i++){
+for($i=0;$i<(is_countable($_SESSION['sess_id']) ? count($_SESSION['sess_id']) : 0);$i++){
 					$sql_add2 = mysqli_query($con,"INSERT INTO ".$order_detail." VALUES
 					
 				   ('".$row[0]."', 

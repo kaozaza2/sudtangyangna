@@ -198,7 +198,7 @@ if(!is_numeric($_POST['txtTel'])) {
 	$FileUpLoadtmp = $_FILES['FileUpload'] ['tmp_name'];
 			
 if($FileUpLoadtmp){					 
-	$array_last = explode(".",$FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
+	$array_last = explode(".",(string) $FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์		
 	$c = count($array_last) - 1; //นับจำนวน จุด "." ของชื่อตัวแปร์ 
 	$lname = strtolower($array_last [$c]); // หา นามสกุลไฟล์ ตัวสุดท้ายของ ตัวแปร์
 	$NewFileupload = date("U"); 
@@ -207,7 +207,7 @@ if($FileUpLoadtmp){
 
 
 // วัน เดือน ปี
-$date_ary = explode("/", $_POST['txt_date']);
+$date_ary = explode("/", (string) $_POST['txt_date']);
 
 $day = $date_ary[0];
 $month = $date_ary[1];

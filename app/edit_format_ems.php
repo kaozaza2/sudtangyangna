@@ -106,7 +106,7 @@ if(!isset($start)){
 $start = 0;
 }
 $limit = 5;//$NUMMAX; // แสดงผลหน้าละกี่หัวข้อ
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 
 	$Qtotal = mysqli_query($con,"SELECT * FROM  ".$ems.""); //คิวรี่ คำสั่ง
 	$total = mysqli_num_rows($Qtotal); // หาจำนวน record 

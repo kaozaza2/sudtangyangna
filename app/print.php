@@ -287,7 +287,7 @@ include "connect_db.php";
         </form>
 		<p>&nbsp;</p>
 	      <p>&nbsp;</p>
-		<?php } ?>
+<?php } ?>
 	      
 	      <p>&nbsp;</p>
         </div>

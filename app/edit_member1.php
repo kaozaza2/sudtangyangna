@@ -52,7 +52,7 @@ include "function.php";
 		$rs1 = mysqli_fetch_array($sql2);
 		
 				//แยกวันเดือนปี
-		$Date_array = explode("-",$rs1['mb_birthday']);
+		$Date_array = explode("-",(string) $rs1['mb_birthday']);
 		$year = $Date_array[0]+543;
 		$month1 = $Date_array[1];
 		$day = $Date_array[2];
@@ -230,7 +230,7 @@ if(!is_numeric($_POST['txtTel'])) {
 	$rs2 = mysqli_fetch_array($sql_select2);
 		
 		
-$date_ary = explode("/", $_POST['txt_birthday']);
+$date_ary = explode("/", (string) $_POST['txt_birthday']);
 
 $day = $date_ary[0];
 $month = $date_ary[1];
@@ -270,7 +270,7 @@ $birthday =  $year."-".$month."-".$day; // ทำให้เป็นรูป�
 								mb_email ='".$_POST['txtEmail']."' WHERE mb_id='".$_POST['ID']."'");
 		
 		if($_FILES){
-		$NumFile = count($_FILES['FileUpload'] ['name']);
+		$NumFile = is_countable($_FILES['FileUpload'] ['name']) ? count($_FILES['FileUpload'] ['name']) : 0;
 
 			for($i=0; $i<$NumFile; $i++){
 				if($_FILES['FileUpload'] ['error'] [$i] !=0){
@@ -283,7 +283,7 @@ $birthday =  $year."-".$month."-".$day; // ทำให้เป็นรูป�
 	 		$FileUpLoadtmp = $_FILES['FileUpload'] ['tmp_name'] [$i];
  
 			if($FileUpLoadtmp){					 
-					$array_last = explode(".",$FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์
+					$array_last = explode(".",(string) $FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์
 				
 							$c = count($array_last) - 1; //นับจำนวน จุด "." ของชื่อตัวแปร์ 
 							$lname = strtolower($array_last [$c]); // หา นามสกุลไฟล์ ตัวสุดท้ายของ ตัวแปร์

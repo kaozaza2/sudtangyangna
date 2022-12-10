@@ -33,7 +33,7 @@ $stock = $rs2['prd_stock']+$Num;
 $sql_update = mysqli_query($con,"UPDATE ".$product." SET prd_stock='".$stock."' WHERE prd_id='".$_GET['ID']."'");
 
 
-if(sql_update){
+if(\SQL_UPDATE){
 	echo "<script>alert('เพิ่มสินค้าเข้าสต๊อกแล้ว')</script>";
 	echo "<meta http-equiv='refresh' content='0; url=admin_product.php?m_page=".$_GET['m_page']."'>";
 }else{

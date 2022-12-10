@@ -96,7 +96,7 @@ if(!isset($start)){
 $start = 0;
 }
 $limit = 5;//$NUMMAX; // แสดงผลหน้าละกี่หัวข้อ
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 
 	$Qtotal = mysqli_query($con,"SELECT * FROM  ".$bank.""); //คิวรี่ คำสั่ง
 	$total = mysqli_num_rows($Qtotal); // หาจำนวน record 
@@ -112,7 +112,7 @@ $c = $cols;
                         <tr>
                           <?php
 while($result = mysqli_fetch_array($Query)){
-$detail_product = substr($result['prd_detail'], 0, 70) . "";
+$detail_product = substr((string) $result['prd_detail'], 0, 70) . "";
 $c --;2
 ?>
                           <td align="left" valign="top" id="prd_bottom"><div id="prd_photo" style="width: 55px;">

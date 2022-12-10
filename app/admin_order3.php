@@ -62,6 +62,7 @@ $link= $connect;
                     <?php     
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า     
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){     
+    $nClass = null;
     global $urlquery_str;  
 	global $id_type;
     $pPrev=$chk_page-1;  
@@ -212,7 +213,7 @@ while($Result=mysqli_fetch_array($qr)){
                           </tr>
                         </li>
                         <?PHP $no++; $i++?>
-                        <?php } ?>
+<?php } ?>
                       </table>
                     </ul>
                   <?php if($total>0){ ?>

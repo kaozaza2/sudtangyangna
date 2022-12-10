@@ -58,7 +58,7 @@ include "connect_db.php";
 		  <ul class="ul_type">
 		  <li id="li_type"><a href="basket_product.php">
 		  <img src="images/icon-cart.gif" width="17" height="14" border="0" /> 
-		   จำนวน [<?php echo count($_SESSION['sess_id'] ?: []); ?>] รายการ </a>		  </li>
+		   จำนวน [<?php echo is_countable($_SESSION['sess_id'] ?: []) ? count($_SESSION['sess_id'] ?: []) : 0; ?>] รายการ </a>		  </li>
 			<li id="li_type"><a href="basket_product.php">
 		  <img src="images/icon-cart.gif" width="17" height="14" border="0" /> 
 		   ราคารวม : [<?php echo number_format($_SESSION['sess_Total'],2); ?>] บาท</a>		  </li>

@@ -67,7 +67,7 @@ if(!isset($start)){
 $start = 0;
 }
 $limit = 20;//$NUMMAX; // แสดงผลหน้าละกี่หัวข้อ
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 
 if(!$_GET['type_id']==""){
 	$Qtotal = mysqli_query($con,"SELECT * FROM  ".$product." WHERE prd_type='".$_GET['type_id']."'"); //คิวรี่ คำสั่ง
@@ -91,7 +91,7 @@ $c = $cols;
                         <tr>
                           <?php
 while($result = mysqli_fetch_array($Query)){
-$detail_product = substr($result['prd_detail'], 0, 33) . "...";
+$detail_product = substr((string) $result['prd_detail'], 0, 33) . "...";
 $c --;2
 ?>
 <?PHP

@@ -27,7 +27,7 @@ if($rs_emp['mb_status']=='1'){
 	 <!-- 
       <tr>
         <td height="23"><a href="buy_product1.php?m_page=<?=$_GET['m_page']?>"><img src="images/diagram_v2-29.png" border="0" />จัดซื้อ[
-    <?=count($_SESSION['sess_prd_id'] ?: [])?>
+    <?=is_countable($_SESSION['sess_prd_id'] ?: []) ? count($_SESSION['sess_prd_id'] ?: []) : 0?>
     ] รายการ </a></td>
       </tr>
 	  -->

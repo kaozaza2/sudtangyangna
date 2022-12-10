@@ -67,7 +67,7 @@ padding-top: 215px;
 	margin-left: 5px;
 }
 
-/* ส่วนกลางของเว็บไซต์*/
+/* ??วน??าง?อง???ไซต?*/
 .data_center {
 	margin-left: 194px; 
 	padding-top: 0px;
@@ -116,7 +116,7 @@ padding-top: 215px;
 	padding-top: 10px; text-align:center;
 }
 
-/*======end ส่วนโคร้งสร้างเว็บ===== */
+/*======end ??วน??????าง???===== */
 
 .clear_both{
 	clear:both;
@@ -129,13 +129,13 @@ padding-top: 215px;
 .txt_frm {
 	background: #FFF; color: #000;
 }
-/* ประเภทสินค้า */
+/* ???????ิน??? */
 .title_data_type {
 	width:180px; 
 	padding-top: 5px; 
 	padding-bottom: 2px; 
 	padding-left: 5px; 
-	background: #fed8e1;  /* เปลี่ยนสีพื้นหลังของประเภทสินค้า*/
+	background: #fed8e1;  /* ????ยน?ีพ????ัง?อง???????ิน???*/
 	font-size: 15px;
 	color: #330000;
 
@@ -202,14 +202,14 @@ padding-top: 215px;
 }
 /* end */
 
-/* ส่วนแสดงผล รายละเอียดต่าง ๆ */
+/* ??วน?สด??? ????????ยด??าง ? */
 #ULlisT {
 	list-style: none;
 }
 #ULlisT #liLisT1 {
 	font-size: 12px;
 }
-#ULlisT #liLisT1 { /* ส่วน Head รายงาน */
+#ULlisT #liLisT1 { /* ??วน Head ??ยงาน */
 float: left;
  display: block;
  border: 1px solid #c2d1f2;
@@ -230,7 +230,7 @@ float: left;
  padding-top: 2px;
  padding-bottom: 2px;
  }
- #ULlisT #liLink { /* ส่วน Link แก้ไข , ลบ */
+ #ULlisT #liLink { /* ??วน Link ??? , ลบ */
 float: left;
  display: block;
  border: 1px solid #c2d1f2;
@@ -308,7 +308,7 @@ legend {
 .akey {
   text-decoration: underline;
 }
-/* รายการสินค้า */
+/* ??ยก???ิน??? */
 #prd_bottom{
 	border-bottom: 1px solid #eee; padding-bottom:5px;
 }

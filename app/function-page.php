@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 	}
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า     
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){     
+    $nClass = null;
     global $urlquery_str;  
 	global $id_type;
      $pPrev=$chk_page-1;  
@@ -16,7 +17,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
     $pNext=$chk_page+1;  
     $pNext=($pNext>=$total_p)?$total_p-1:$pNext;       
     $lt_page=$total_p-4;  
-	$linkp = urllink.$_GET['page']."&link=".$_GET['link']."&type=".$_GET['type']."&id=".$_GET['id']."";
+	$linkp = \URLLINK.$_GET['page']."&link=".$_GET['link']."&type=".$_GET['type']."&id=".$_GET['id']."";
 	echo $pend = $total_p-1;
     if($chk_page> -1 or $chk_page=="" ){    
         echo "<a  href='".$linkp."&s_page=0&urlquery_str=".$urlquery_str."' class='naviPN'>หน้าแรก</a>";  

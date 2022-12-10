@@ -5,7 +5,7 @@ $product_id=$_GET['ID'];
 $num = $_GET['txt_num'];
 $page = $_GET['page'];
 
-if(count($_SESSION['sess_id'] ?: [])=="0"){ 
+if((is_countable($_SESSION['sess_id'] ?: []) ? count($_SESSION['sess_id'] ?: []) : 0)=="0"){ 
 	 $check=1;
 //ค้นหาว่ามีข้อมูลรหัสสินค้าอยู่ใน sess_id หรือไม่ ถ้าไม่มีให้ check เท่ากับ 1
 }else if (!in_array($_GET['ID'], $_SESSION['sess_id'])){

@@ -52,6 +52,7 @@ include "function.php";
                   <?php     
 // สร้างฟังก์ชั่น สำหรับแสดงการแบ่งหน้า     
 function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){     
+    $nClass = null;
     global $urlquery_str;  
 	global $id_type;
     $pPrev=$chk_page-1;  
@@ -111,7 +112,7 @@ function page_navigator($before_p,$plus_p,$total,$total_p,$chk_page){
 <ul class="none">
                   <?php  
  
-$Search = trim($_POST['txtSearch']); //ตัดซ่องวางของสตริง
+$Search = trim((string) $_POST['txtSearch']); //ตัดซ่องวางของสตริง
 
 //เลือกข้อมูลในตารางออกมาแสดงโดยใช้คำสั่ง SELECT 
 $q="SELECT * FROM ".$order_in." WHERE ordin_status='N' ORDER BY ordin_id DESC";  

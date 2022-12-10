@@ -243,7 +243,7 @@ echo "<script>alert('กรุณากรอกราคาสินค้า�
 						}
 						
 if($_FILES){
-		$NumFile = count($_FILES['FileUpload'] ['name']);
+		$NumFile = is_countable($_FILES['FileUpload'] ['name']) ? count($_FILES['FileUpload'] ['name']) : 0;
 
 			for($i=0; $i<$NumFile; $i++){
 				if($_FILES['FileUpload'] ['error'] [$i] !=0){
@@ -256,7 +256,7 @@ if($_FILES){
 	 		$FileUpLoadtmp = $_FILES['FileUpload'] ['tmp_name'] [$i];
  
 			if($FileUpLoadtmp){					 
-					$array_last = explode(".",$FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์
+					$array_last = explode(".",(string) $FileName); // เป็น array หาจำนวน จุด . ของชื่อตัวแปร์
 				
 							$c = count($array_last) - 1; //นับจำนวน จุด "." ของชื่อตัวแปร์ 
 							$lname = strtolower($array_last [$c]); // หา นามสกุลไฟล์ ตัวสุดท้ายของ ตัวแปร์
